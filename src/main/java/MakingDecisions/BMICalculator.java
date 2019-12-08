@@ -9,6 +9,7 @@ public class BMICalculator {
         System.out.println("Please enter your height in inches:");
         Scanner sc1 = new Scanner(System.in);
         double height = sc1.nextDouble();
+
         System.out.println("Please enter your weight in pounds:");
         Scanner sc2 = new Scanner(System.in);
         double weight = sc2.nextDouble();

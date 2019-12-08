@@ -12,7 +12,7 @@ public class MultistateSalesTaxCalc {
         System.out.println("What state do you live in?");
         Scanner sc2 = new Scanner(System.in);
         String state = sc2.nextLine();
-        double taxWIEau = order * 5 / 10;
+        double taxWIEau = order * 5 / 100;
         double taxWIDunn = order * 4 / 100;
         double taxIl = order * 8 / 100;
         double sumIl = order + taxIl;
