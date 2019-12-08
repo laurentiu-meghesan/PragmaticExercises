@@ -6,8 +6,8 @@ public class TemperatureConverter {
 
     public static void main(String[] args) {
 
-        System.out.println("Press C to convert from Fahrenheit to Celsius.");
-        System.out.println("Press F to convert from Celcius to Fahrenheit.");
+        System.out.println("Press C to convert from Fahrenheit to Celsius."+'\n'+
+                "Press F to convert from Celcius to Fahrenheit.");
         Scanner sc1 = new Scanner(System.in);
         String a = sc1.nextLine();
         System.out.println("Your choice: " + a + ".");
