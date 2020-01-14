@@ -9,7 +9,6 @@ public class NumbersToNames {
         Scanner sc1 = new Scanner(System.in);
         int month = sc1.nextInt();
 
-        String months;
         switch (month){
 
             case 1: System.out.println("The name of the month is January");
@@ -24,7 +23,7 @@ public class NumbersToNames {
             break;
             case 6: System.out.println ("The name of the month is June");
             break;
-            case 7: System.out.println ("The name of the month is Jully");
+            case 7: System.out.println ("The name of the month is July");
             break;
             case 8: System.out.println ("The name of the month is August");
             break;
@@ -36,6 +35,9 @@ public class NumbersToNames {
             break;
             case 12 :System.out.println ("The name of the month is December");
             break;
+            default:
+                System.out.println("You entered an invalid number!/");
+                break;
 
         }
     }
