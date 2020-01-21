@@ -1,25 +1,25 @@
 package functions;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class AnagramChecker {
 
-    public static class Class {
-        boolean isAnagram(String string1, String string2) {
-            boolean ch = false;
-            if (string1.length() == string2.length()) {
-                char[] a = string1.toCharArray();
-                char[] b = string2.toCharArray();
+    private boolean isAnagram(String string1, String string2) {
+        if (string1.length() == string2.length()) {
+            char[] a = string1.toCharArray();
+            char[] b = string2.toCharArray();
+            Arrays.sort(a);
+            Arrays.sort(b);
 
-                for (int i = 0; i < string1.length(); i++) {
-                    if (a[i] != b[i]) {
-                        ch = false;
-                        break;
-                    }else ch = true;
+            for (int i = 0; i < string1.length(); i++) {
+                if (a[i] != b[i]) {
+                    return false;
                 }
+                return true;
             }
-            return ch;
         }
+        return false;
     }
 
     public static void main(String[] args) {
@@ -32,7 +32,7 @@ public class AnagramChecker {
         Scanner scanner1 = new Scanner(System.in);
         String secondString = scanner1.nextLine();
 
-        Class check = new Class();
+        AnagramChecker check = new AnagramChecker();
         check.isAnagram(firstString, secondString);
         if (check.isAnagram(firstString, secondString)) {
             System.out.println(firstString + " is anagram with " + secondString + ".");
