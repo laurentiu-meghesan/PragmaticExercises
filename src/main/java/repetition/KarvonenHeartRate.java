@@ -1,22 +1,25 @@
 package repetition;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class KarvonenHeartRate {
 
-    private double targetHeartRate(int age, int restingHR, int intensity) {
-        return (((220 - age) - restingHR) * intensity) + restingHR;
+    private double targetHeartRate(double age, double restingHR, double intensity) {
+        return Math.round((((220 - age) - restingHR) * intensity/100)+ restingHR);
     }
 
     public static void main(String[] args) {
         System.out.println("Please enter your age:");
         boolean flag = false, flag1 = false;
         int intensity = 55;
+        int age = 0, restingHR = 0;
 
         do {
             try {
                 Scanner scanner = new Scanner(System.in);
-                int age = scanner.nextInt();
+                age = scanner.nextInt();
                 scanner.nextLine();
 
                 if (age <= 1) {
@@ -32,7 +35,7 @@ public class KarvonenHeartRate {
         do {
             try {
                 Scanner scanner1 = new Scanner(System.in);
-                int restingHR = scanner1.nextInt();
+                restingHR = scanner1.nextInt();
                 scanner1.nextLine();
 
                 if (restingHR >= 250 | restingHR <= 50) {
@@ -44,7 +47,17 @@ public class KarvonenHeartRate {
             }
         } while (!flag1);
 
-//        System.out.format("%4d", Intensity);
+        KarvonenHeartRate karvonenHeartRate = new KarvonenHeartRate();
+        List<Integer> intensityList = new ArrayList<>();
+        List<Double> rateList = new ArrayList<>();
 
+        for (int i = 0; i <= ((95 - 55) / 5); i++) {
+            intensityList.add(intensity);
+            rateList.add(karvonenHeartRate.targetHeartRate(age,restingHR,intensity));
+
+            intensity = intensity + 5;
+        }
+
+        System.out.println(rateList);
     }
 }
