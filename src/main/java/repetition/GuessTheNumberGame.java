@@ -44,6 +44,9 @@ public class GuessTheNumberGame {
             guesses++;
         }
         System.out.println("You got it in " + guesses + " guesses!");
+
+        GuessTheNumberGame guessTheNumberGame = new GuessTheNumberGame();
+        guessTheNumberGame.mapNrGuesses(guesses);
     }
 
     private void diff2() {
@@ -85,6 +88,9 @@ public class GuessTheNumberGame {
             guesses++;
         }
         System.out.println("You got it in " + guesses + " guesses!");
+
+        GuessTheNumberGame guessTheNumberGame = new GuessTheNumberGame();
+        guessTheNumberGame.mapNrGuesses(guesses);
     }
 
     private void diff3() {
@@ -125,6 +131,19 @@ public class GuessTheNumberGame {
             guesses++;
         }
         System.out.println("You got it in " + guesses + " guesses!");
+
+        GuessTheNumberGame guessTheNumberGame = new GuessTheNumberGame();
+        guessTheNumberGame.mapNrGuesses(guesses);
+    }
+
+    private void mapNrGuesses(int guesses){
+        if (guesses == 1){
+            System.out.println("You're a mind reader!");
+        } else if (guesses>1 & guesses <=4){
+            System.out.println("Most impressive.");
+        } else if (guesses>3 & guesses<7){
+            System.out.println("You can do better than that.");
+        } else System.out.println("Better luck next time.");
     }
 
     public static void main(String[] args) {
