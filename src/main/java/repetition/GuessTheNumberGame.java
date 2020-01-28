@@ -28,7 +28,7 @@ public class GuessTheNumberGame {
         while (nrToBeGuessed != guess) {
             if (nrToBeGuessed > guess) {
                 System.out.println("Too low. Guess again:");
-            } else if (nrToBeGuessed < guess) {
+            } else {
                 System.out.println("Too high. Guess again:");
             }
             try {
@@ -72,7 +72,7 @@ public class GuessTheNumberGame {
         while (nrToBeGuessed != guess) {
             if (nrToBeGuessed > guess) {
                 System.out.println("Too low. Guess again:");
-            } else if (nrToBeGuessed < guess) {
+            } else {
                 System.out.println("Too high. Guess again:");
             }
             try {
@@ -116,7 +116,7 @@ public class GuessTheNumberGame {
         while (nrToBeGuessed != guess) {
             if (nrToBeGuessed > guess) {
                 System.out.println("Too low. Guess again:");
-            } else if (nrToBeGuessed < guess) {
+            } else {
                 System.out.println("Too high. Guess again:");
             }
             try {
@@ -180,7 +180,7 @@ public class GuessTheNumberGame {
             } else guessTheNumberGame.diff3();
 
 
-            boolean flag2 = false;
+            boolean flag2;
             do {
                 System.out.println("Play again?");
                 Scanner scanner = new Scanner(System.in);
