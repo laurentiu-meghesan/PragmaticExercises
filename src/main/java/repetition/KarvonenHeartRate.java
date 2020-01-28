@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class KarvonenHeartRate {
 
-    private double targetHeartRate(double age, double restingHR, double intensity) {
-        return Math.round((((220 - age) - restingHR) * intensity/100)+ restingHR);
+    private int targetHeartRate(double age, double restingHR, double intensity) {
+        return (int) (Math.round((((220 - age) - restingHR) * intensity / 100) + restingHR));
     }
 
     public static void main(String[] args) {
@@ -49,15 +49,25 @@ public class KarvonenHeartRate {
 
         KarvonenHeartRate karvonenHeartRate = new KarvonenHeartRate();
         List<Integer> intensityList = new ArrayList<>();
-        List<Double> rateList = new ArrayList<>();
+        List<Integer> rateList = new ArrayList<>();
 
         for (int i = 0; i <= ((95 - 55) / 5); i++) {
             intensityList.add(intensity);
-            rateList.add(karvonenHeartRate.targetHeartRate(age,restingHR,intensity));
+            rateList.add(karvonenHeartRate.targetHeartRate(age, restingHR, intensity));
 
             intensity = intensity + 5;
         }
 
-        System.out.println(rateList);
+        System.out.println();
+        System.out.printf("%10s %2s %4s", "Intensity", "|", "Rate");
+        System.out.println();
+        System.out.println("---------------------");
+        for (int j = 0; j < intensityList.size(); j++) {
+            System.out.format("%4s %8s %3s %1s",
+                    intensityList.get(j)+"%","|", rateList.get(j), "bpm");
+            System.out.println();
+        }
+        System.out.println("---------------------");
+
     }
 }
